@@ -15,7 +15,8 @@ import { AuthRememberComponent } from './auth-remember/auth-remember.component';
     FormsModule
   ],
   exports: [
-    AuthFormComponent
+    AuthFormComponent,
+    AuthRememberComponent
   ]
 })
 export class AuthFormModule {}
