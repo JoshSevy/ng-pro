@@ -19,7 +19,7 @@ export class AppComponent {
   }
 
   loginUser(user: User) {
-    console.log('Login', user);
+    console.log('Login', user, this.rememberMe);
   }
 
 }
