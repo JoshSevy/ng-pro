@@ -17,7 +17,11 @@ export class AuthFormComponent implements AfterContentInit {
   @Output() submitted: EventEmitter<User> = new EventEmitter<User>();
 
   ngAfterContentInit() {
-    console.log()
+    if (this.remember) {
+      this.remember.checked.subscribe((checked: boolean) => {
+        this.showMessage= checked;
+      })
+    }
   }
 
   onSubmit(value: User) {
