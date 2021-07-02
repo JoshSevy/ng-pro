@@ -20,7 +20,6 @@ export class AuthFormComponent implements AfterContentInit {
       this.remember.forEach((query) => {
         query.checked.subscribe((checked: boolean) => this.showMessage = checked);
       })
-      })
     }
   }
 
