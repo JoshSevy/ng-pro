@@ -18,7 +18,7 @@ export class AuthFormComponent implements AfterContentInit, AfterViewInit {
   @ContentChildren(AuthRememberComponent) remember: QueryList<AuthRememberComponent>;
   @Output() submitted: EventEmitter<User> = new EventEmitter<User>();
 
-  constructor(cd: ChangeDetectorRef) {}
+  constructor(private cd: ChangeDetectorRef) {}
 
   ngAfterViewInit() {
     if (this.message) {
