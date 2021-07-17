@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, ContentChildren, AfterContentInit, QueryList, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, Output, EventEmitter, ContentChildren, AfterContentInit, QueryList, ViewChild, ViewChildren, AfterViewInit, ChangeDetectorRef, ElementRef } from '@angular/core';
 
 import { AuthRememberComponent } from './auth-remember/auth-remember.component';
 import { AuthMessageComponent } from './auth-message/auth-message.component';
@@ -13,7 +13,9 @@ export class AuthFormComponent implements AfterContentInit, AfterViewInit {
 
   showMessage: boolean;
 
-  @ViewChild(AuthMessageComponent) message: QueryList<AuthMessageComponent>;
+  @ViewChild('email') email: ElementRef;
+
+  @ViewChildren(AuthMessageComponent) message: QueryList<AuthMessageComponent>;
 
   @ContentChildren(AuthRememberComponent) remember: QueryList<AuthRememberComponent>;
   @Output() submitted: EventEmitter<User> = new EventEmitter<User>();
