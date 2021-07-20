@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ComponentFactoryResolver, ViewChild, ViewContainerRef } from '@angular/core';
+
+import { AuthFormComponent } from './auth-form/auth-form.component';
 
 import { User } from './auth-form/auth-form.interface';
 
@@ -6,20 +8,21 @@ import { User } from './auth-form/auth-form.interface';
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
 
-  rememberMe: boolean = false;
+  @ViewChild('entry', { read: ViewContainerRef }) entry: ViewContainerRef;
 
-  rememberUser(remember: boolean) {
-    this.rememberMe = remember;
-  }
+  constructor(
+    private resolver: ComponentFactoryResolver
+  ) { }
 
-  createUser(user: User) {
-    console.log('Create account', user);
+  ngAfterViewInit() {
+    const authFormFactory = this.resolver.resolveComponentFactory(AuthFormComponent);
+    const component = this.entry.createComponent(authFormFactory);
   }
 
   loginUser(user: User) {
-    console.log('Login', user, this.rememberMe);
+    console.log('Login', user);
   }
 
 }
