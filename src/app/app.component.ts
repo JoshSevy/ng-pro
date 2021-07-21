@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ComponentFactoryResolver, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Component, ComponentFactoryResolver, ViewChild, ChangeDetectionStrategy, ViewContainerRef } from '@angular/core';
 
 import { AuthFormComponent } from './auth-form/auth-form.component';
 
@@ -18,11 +18,11 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     const authFormFactory = this.resolver.resolveComponentFactory(AuthFormComponent);
-    const component = this.entry.createComponent(authFormFactory);
+    const component = this.entry?.createComponent(authFormFactory);
+    component.instance.title = 'Create Account';
   }
 
   loginUser(user: User) {
     console.log('Login', user);
   }
-
 }
