@@ -1,4 +1,4 @@
-import { AfterContentInit, ChangeDetectorRef, Component, ComponentFactoryResolver, ComponentRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterContentInit, ChangeDetectorRef, Component, ComponentFactoryResolver, ComponentRef, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 
 import { AuthFormComponent } from './auth-form/auth-form.component';
 
@@ -13,6 +13,7 @@ export class AppComponent implements AfterContentInit {
   component: ComponentRef<AuthFormComponent>;
 
   @ViewChild('entry', { read: ViewContainerRef }) entry: ViewContainerRef;
+  @ViewChild('tmpl') tmpl: TemplateRef<any>;
 
   constructor(
     private resolver: ComponentFactoryResolver,
@@ -27,6 +28,11 @@ export class AppComponent implements AfterContentInit {
     this.component.instance.title = 'Create Account';
     this.component.instance.submitted.subscribe(this.loginUser);
     console.log(this.component.instance);
+
+    this.entry.createEmbeddedView(this.tmpl, {
+      $implicit: 'Sevy Joshua',
+      location: 'Denver, CO'
+    });
   }
 
   destroyComponent() {
