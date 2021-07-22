@@ -1,7 +1,10 @@
 <div>
   <button (click)="destroyComponent()">Destroy</button>
   <button (click)="moveComponent()">Move</button>
-  <div #entry></div>
+  <ng-container
+    [ngTemplateOutlet]="tmpl"
+    [ngTemplateOutletContext]="ctx"
+  ></ng-container>
   <br />
   <ng-template #tmpl let-name let-location="location">
     {{ name }} : {{ location }}

@@ -10,6 +10,11 @@ import { User } from './auth-form/auth-form.interface';
 })
 export class AppComponent implements AfterContentInit {
 
+  ctx = {
+    $implicit: 'Sevy Joshua',
+    location: 'Denver, CO'
+  };
+
   component: ComponentRef<AuthFormComponent>;
 
   @ViewChild('entry', { read: ViewContainerRef }) entry: ViewContainerRef;
