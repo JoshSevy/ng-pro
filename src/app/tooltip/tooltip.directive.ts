@@ -1,7 +1,8 @@
 import { Directive, ElementRef, Input, OnInit, ViewContainerRef } from "@angular/core";
 
 @Directive({
-
+  selector: '[tooltip]',
+  exportAs: 'tooltip'
 })
 export class TooltipDirective implements OnInit {
   tooltipElement = document.createElement('div');
