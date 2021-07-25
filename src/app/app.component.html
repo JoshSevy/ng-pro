@@ -1,16 +1,4 @@
 <div>
-  <button (click)="destroyComponent()">Destroy</button>
-  <button (click)="moveComponent()">Move</button>
-  <ng-container
-    [ngTemplateOutlet]="tmpl"
-    [ngTemplateOutletContext]="ctx"
-  ></ng-container>
-  <br />
-  <ng-template #tmpl let-name let-location="location">
-    {{ name }} : {{ location }}
-  </ng-template>
-</div>
-<div>
   <label>
     Credit Card Number:
     <input
@@ -20,7 +8,7 @@
       credit-card
     />
   </label>
-  <label tooltip="3 digits, back of your card" #myTooltip="tooltip">
+  <label tooltip="Enter your 3 digit CVV" #myTooltip="tooltip">
     Enter your security code:
     <span (mouseover)="myTooltip.show()" (mouseout)="myTooltip.hide()">
       (?)

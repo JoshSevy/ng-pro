@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, OnInit, ViewContainerRef } from "@angular/core";
+import { Directive, ElementRef, Input, OnInit } from "@angular/core";
 
 @Directive({
   selector: '[tooltip]',
@@ -23,11 +23,10 @@ export class TooltipDirective implements OnInit {
 
     constructor(
       private element: ElementRef,
-      private view: ViewContainerRef
     ) { }
 
     ngOnInit() {
-      this.tooltipElement.className = 'tooptip';
+      this.tooltipElement.className = 'tooltip';
       this.element.nativeElement.appendChild(this.tooltipElement);
       this.element.nativeElement.classList.add('tooltip-container');
      }

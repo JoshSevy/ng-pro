@@ -11,7 +11,8 @@ import { TooltipDirective } from './tooltip/tooltip.directive';
   declarations: [
     AppComponent,
     CreditCardDirective,
-    TooltipDirective
+    TooltipDirective,
+
   ],
   imports: [
     BrowserModule,
