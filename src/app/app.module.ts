@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthFormModule } from './auth-form/auth-form.module';
 import { CreditCardDirective } from './credit-card/credit-card.directive';
+import { FileSizePipe } from './filesize.pipe';
 import { TooltipDirective } from './tooltip/tooltip.directive';
 
 @NgModule({
@@ -12,6 +13,7 @@ import { TooltipDirective } from './tooltip/tooltip.directive';
     AppComponent,
     CreditCardDirective,
     TooltipDirective,
+    FileSizePipe
 
   ],
   imports: [

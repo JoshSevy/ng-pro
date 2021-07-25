@@ -1,3 +1,4 @@
+<!-- CreditCard Custom Directive and Tooltip -->
 <div>
   <label>
     Credit Card Number:
@@ -15,4 +16,12 @@
     </span>
     <input type="text" />
   </label>
+</div>
+<br />
+<!-- Custom Filesize pipe -->
+<div>
+  <div *ngFor="let file of files">
+    <p>{{ file.name }}</p>
+    <p>{{ file.size | filesize }}</p>
+  </div>
 </div>
