@@ -1,9 +1,12 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
+import { FormGroup } from "@angular/forms";
 
 @Component({
     selector: "stock-selector",
     templateUrl: "./stock-selector.component.html",
-    styleUrls: ["./stock-selector.component.css"]
+    styleUrls: ["./stock-selector.component.scss"]
 })
 export class StockSelectorComponent {
+  @Input()
+  parent: FormGroup;
 }
